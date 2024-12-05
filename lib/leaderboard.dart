@@ -1,7 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/widgets.dart';
-//import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
 
 class Leaderboard extends StatefulWidget {
@@ -15,7 +13,7 @@ class LeaderboardState extends State<Leaderboard> {
   DatabaseReference dbhandler = FirebaseDatabase.instance.ref();
   List<Map<String, dynamic>> leaderboardList = [];
 
-   // Load treat records after the first frame is drawn
+   // load leaderboard records after the first frame is drawn
   @override
   void initState() {
     super.initState();
@@ -39,7 +37,7 @@ class LeaderboardState extends State<Leaderboard> {
             String dateString = value['date'];
             DateTime date = DateFormat('dd-MM-yyyy').parse(dateString);
 
-            if (isToday(date)) {
+            if (isToday(date)) { // only dislays records from today
               Map<String, dynamic> scoreRecord = {
                 'username': value['username'],
                 'score': value['score'],
@@ -148,7 +146,7 @@ class LeaderboardState extends State<Leaderboard> {
                   backgroundColor: const Color.fromARGB(255, 98, 211, 136),
                 ),
                 child: const Text(
-                  'Play Again',
+                  'Play Again', // goes back to strat quiz again
                   style: TextStyle(fontSize: 30, color: Colors.white),
                 ),
               ),

@@ -16,6 +16,7 @@ class _QuizState extends State<Quiz> {
   int score = 0;
   String username = "anonymous";
 
+  // List of colors to itterate through
   List<Color> christmasButtonColorList = [
     const Color.fromARGB(255, 2, 170, 66), 
     const Color.fromARGB(255, 150, 10, 29),
@@ -28,6 +29,7 @@ class _QuizState extends State<Quiz> {
   @override
   void initState() {
     super.initState();
+    // First show the username popup
     WidgetsBinding.instance.addPostFrameCallback((_) => usernamePopup());
     loadQuestions();
   }
@@ -127,10 +129,8 @@ class _QuizState extends State<Quiz> {
             actions: [
               TextButton(
                 onPressed: () {
-                  //Navigator.pop(context);
                   //go to leaderboard
                   Navigator.pushNamed(context, '/leaderboard');
-                  //resetQuiz();
                 },
                 child: const Text("Go to Leaderboard"),
               ),
@@ -141,6 +141,7 @@ class _QuizState extends State<Quiz> {
     }
   }
 
+  // Reset the quiz - not currently used
   void resetQuiz() {
     setState(() {
       currentIndex = 0;
@@ -148,6 +149,7 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  // Upload the score to the leaderboard In database
   void uploadScore() {
     String dateString = DateFormat('dd-MM-yyyy').format(DateTime.now());
     dbHandler.child("Leaderboard").push().set({
@@ -165,7 +167,7 @@ class _QuizState extends State<Quiz> {
         backgroundColor: const Color.fromARGB(255, 40, 35, 46),
       ),
       body: questionList.isEmpty
-          ? const Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator()) // Show loading indicator if device offline or database issue 
           : SingleChildScrollView(
                 child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
