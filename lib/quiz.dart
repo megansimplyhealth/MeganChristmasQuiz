@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:intl/intl.dart';
 
-
 class Quiz extends StatefulWidget {
   const Quiz({Key? key}) : super(key: key);
 
@@ -16,6 +15,15 @@ class _QuizState extends State<Quiz> {
   int currentIndex = 0;
   int score = 0;
   String username = "anonymous";
+
+  List<Color> christmasButtonColorList = [
+    const Color.fromARGB(255, 2, 170, 66), 
+    const Color.fromARGB(255, 150, 10, 29),
+    const Color.fromARGB(255, 18, 100, 45),
+    const Color.fromARGB(255, 204, 8, 8),
+    const Color.fromARGB(255, 98, 211, 136),
+    const Color.fromARGB(255, 226, 55, 55),
+  ];
 
   @override
   void initState() {
@@ -153,40 +161,50 @@ class _QuizState extends State<Quiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Quiz App"),
+        title: const Text(" ", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+        backgroundColor: const Color.fromARGB(255, 40, 35, 46),
       ),
       body: questionList.isEmpty
           ? const Center(child: CircularProgressIndicator())
-          : Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+          : SingleChildScrollView(
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    questionList[currentIndex]["question"],
-                    style: const TextStyle(fontSize: 20),
-                    textAlign: TextAlign.center,
-                  ),
                   const SizedBox(height: 20),
+                  // Qustion text ui
+                  Padding(padding: const EdgeInsets.all(10), child:Text(
+                    questionList[currentIndex]["question"],
+                    style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+                    textAlign: TextAlign.center,
+                  )),
+                  const SizedBox(height: 20),
+                  // Buttons ui
                   for (int i = 1; i <= 4; i++)
-                    ElevatedButton(
-                      onPressed: () => checkAnswer(i),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff01579B),
-                      ),
-                      child: Text(
-                        questionList[currentIndex]["answer$i"],
-                        style: const TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                    ),
+                    SizedBox(
+                      child: Column(children: [ 
+                        SizedBox(
+                          width: 300,
+                          height: 80,
+                          child:ElevatedButton(
+                            onPressed: () => checkAnswer(i),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: christmasButtonColorList[i % christmasButtonColorList.length],
+                            ),
+                            child: Text(questionList[currentIndex]["answer$i"],
+                              style: const TextStyle(fontSize: 24, color: Colors.white),
+                        ))),
+                        const SizedBox(height: 10),
+                    ])),
                   const SizedBox(height: 20),
                   Text(
                     "Score: $score/${questionList.length}",
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ],
               ),
+
             ),
     );
   }

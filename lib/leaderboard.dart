@@ -53,6 +53,9 @@ class LeaderboardState extends State<Leaderboard> {
           });
         }
       }
+      // Sort the leaderboard records by score
+      //tempList.sort((a, b) => b['score'].compareTo(a['score']));
+
       setState(() {
         leaderboardList = tempList;
       });
@@ -71,7 +74,7 @@ class LeaderboardState extends State<Leaderboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffFCFAFC),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
