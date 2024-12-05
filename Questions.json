@@ -2,51 +2,83 @@
   "Questions": {
     "1": {
       "question": "What is the name of the red-nosed reindeer?",
-      "answer1": "Rudolph",
+      "answer1": "Comet",
       "answer2": "Dasher",
       "answer3": "Blitzen",
-      "answer4": "Comet",
-      "correctAnswer": 1
+      "answer4": "Rudolph",
+      "correctAnswer": 4
     },
     "2": {
-      "question": "In the song 'The Twelve Days of Christmas,' what is given on the 5th day?",
-      "answer1": "Golden Rings",
-      "answer2": "French Hens",
-      "answer3": "Turtle Doves",
-      "answer4": "Swans a-Swimming",
-      "correctAnswer": 1
+      "question": "In which country did the tradition of putting up a Christmas tree originate?",
+      "answer1": "France",
+      "answer2": "Germany",
+      "answer3": "Norway",
+      "answer4": "Sweden",
+      "correctAnswer": 2
     },
     "3": {
-      "question": "Who wrote the novel 'A Christmas Carol'?",
-      "answer1": "Charles Dickens",
-      "answer2": "Mark Twain",
-      "answer3": "J.R.R. Tolkien",
-      "answer4": "Jane Austen",
+      "question": "What popular Christmas beverage is also called \"milk punch\"?",
+      "answer1": "Eggnog",
+      "answer2": "Hot chocolate",
+      "answer3": "Apple cider",
+      "answer4": "Mulled wine",
       "correctAnswer": 1
     },
     "4": {
-      "question": "What is the name of the snowman in the famous Christmas song?",
-      "answer1": "Frosty",
-      "answer2": "Jack",
-      "answer3": "Snowy",
-      "answer4": "Chilly",
-      "correctAnswer": 1
+      "question": "Which Christmas carol contains the lyric \"Fa la la la la, la la la la\"?",
+      "answer1": "Silent Night",
+      "answer2": "Jingle Bells",
+      "answer3": "Deck the Halls",
+      "answer4": "O Holy Night",
+      "correctAnswer": 3
     },
     "5": {
-      "question": "What country is the Christmas carol 'Silent Night' originally from?",
-      "answer1": "Austria",
-      "answer2": "Germany",
-      "answer3": "France",
-      "answer4": "USA",
+      "question": "What is the name of the main villain in \"The Nightmare Before Christmas\"?",
+      "answer1": "Oogie Boogie",
+      "answer2": "Jack Skellington",
+      "answer3": "Sandy Claws",
+      "answer4": "Zero",
       "correctAnswer": 1
     },
     "6": {
-      "answer1": "Green",
-      "answer2": "White",
-      "answer3": "Red",
-      "answer4": "Pink",
-      "correctAnswer": 2,
-      "question": "What colour is mistletoe berries?"
+      "question": "Which country is the largest exporter of Christmas trees?",
+      "answer1": "United States",
+      "answer2": "Canada",
+      "answer3": "Norway",
+      "answer4": "Denmark",
+      "correctAnswer": 2
+    },
+    "7": {
+      "question": "What figure from English folklore came to be associated with Santa Claus?",
+      "answer1": "Father Christmas",
+      "answer2": "Robin Hood",
+      "answer3": "The Green Man",
+      "answer4": "Jack Frost",
+      "correctAnswer": 1
+    },
+    "8": {
+      "question": "What is the real name of the character Tim Allen plays in \"The Santa Clause\"?",
+      "answer1": "Scott Calvin",
+      "answer2": "Nick Claus",
+      "answer3": "Chris Kringle",
+      "answer4": "Jack Frost",
+      "correctAnswer": 1
+    },
+    "9": {
+      "question": "What is the name of the fruitcake traditionally served in Italy at Christmas?",
+      "answer1": "Pandoro",
+      "answer2": "Panettone",
+      "answer3": "Tiramisu",
+      "answer4": "Cassata",
+      "correctAnswer": 2
+    },
+    "10": {
+      "question": "What is the name of the first artificial Christmas tree made from?",
+      "answer1": "Feathers",
+      "answer2": "Metal",
+      "answer3": "Plastic",
+      "answer4": "Bristles",
+      "correctAnswer": 1
     }
   }
 }
