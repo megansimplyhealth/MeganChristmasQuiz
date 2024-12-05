@@ -73,20 +73,20 @@ class LeaderboardState extends State<Leaderboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFCFAFC),
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const SizedBox(height: 100), // Add some spacing below app bar
+            const SizedBox(height: 30), // Add some spacing below app bar
               const Text(
                 "Today's Leaderboard",
                 style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff01579B)),
+                    color: Colors.white),
               ),
+              const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
                 itemCount: leaderboardList.length,
@@ -101,16 +101,16 @@ class LeaderboardState extends State<Leaderboard> {
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         border:
-                            Border.all(color: const Color.fromRGBO(0, 0, 0, 1)),
+                            Border.all(color: const Color.fromARGB(255, 255, 18, 18)),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: ListTile(
                         title: Text("Username: ${record['username']}",
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 22)),
+                              color: Color.fromARGB(255, 98, 211, 136), fontSize: 26, fontWeight: FontWeight.bold)),
                         subtitle: Text("Score of ${record['score']} on ${record['date']}",
                             style: const TextStyle(
-                                color: Colors.blue, fontSize: 15)),
+                                color: Color.fromARGB(255, 98, 211, 136), fontSize: 20, fontWeight: FontWeight.bold)),
                       ),
                     ),
                   );
@@ -120,13 +120,13 @@ class LeaderboardState extends State<Leaderboard> {
             const SizedBox(height: 20),
             SizedBox(
               width: 240,
-              height: 70,
+              height: 40,
               child: ElevatedButton(
                 onPressed: () async {
                   loadLeaderboardRecords(); // Refresh records
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff01579B),
+                  backgroundColor: const Color.fromARGB(255, 226, 55, 55),
                 ),
                 child: const Text(
                   'Refresh',
@@ -137,14 +137,14 @@ class LeaderboardState extends State<Leaderboard> {
             const SizedBox(height: 20),
             SizedBox(
               width: 240,
-              height: 70,
+              height: 40,
               child: ElevatedButton(
                 onPressed: () async {
                   Navigator.pop(context);
                   Navigator.pushNamed(context, '/quiz');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 151, 28, 55),
+                  backgroundColor: const Color.fromARGB(255, 98, 211, 136),
                 ),
                 child: const Text(
                   'Play Again',
