@@ -53,8 +53,9 @@ class LeaderboardState extends State<Leaderboard> {
           });
         }
       }
+
       // Sort the leaderboard records by score
-      //tempList.sort((a, b) => b['score'].compareTo(a['score']));
+      tempList.sort((a, b) => b['score'].compareTo(a['score']));
 
       setState(() {
         leaderboardList = tempList;
